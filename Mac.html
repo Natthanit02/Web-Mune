@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>กรอก MAC Address</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        input {
+            font-size: 16px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+        }
+
+        label {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <label for="mac-address">กรอก MAC Address:</label>
+        <input type="text" id="mac-address" placeholder="XX:XX:XX:XX:XX:XX" maxlength="17" oninput="formatMAC()">
+    </div>
+
+    <script>
+        function formatMAC() {
+            var input = document.getElementById("mac-address");
+            var value = input.value.toUpperCase().replace(/[^A-F0-9]/g, '').substring(0, 12);
+            var formattedValue = '';
+
+            for (var i = 0; i < value.length; i++) {
+                formattedValue += value[i];
+                if ((i + 1) % 2 === 0 && i < value.length - 1) {
+                    formattedValue += ':';
+                }
+            }
+
+            input.value = formattedValue;
+        }
+    </script>
+
+</body>
+</html>

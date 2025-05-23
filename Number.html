@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สุ่มเลข 18 ตัว</title>
+</head>
+<body>
+    <h2>สุ่มเลข 18 ตัวระหว่าง 200 - 400</h2>
+    <button onclick="generateNumbers()">สุ่มเลข</button>
+    <pre id="result"></pre>
+
+    <script>
+        function generateNumbers() {
+            let numbers = new Set();
+            while (numbers.size < 18) {
+                let randomNum = Math.floor(Math.random() * (380 - 200 + 1)) + 200;
+                numbers.add(randomNum);
+            }
+            document.getElementById("result").innerText = [...numbers].join("\n");
+        }
+    </script>
+</body>
+</html>

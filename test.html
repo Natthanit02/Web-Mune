@@ -1,0 +1,151 @@
+<script>
+//Array loop
+
+let array1 = [
+  ['a','b','c'],
+  ['d','e','f'],
+  ['g','h','i']
+];
+
+for (let i = 0; i < array1.length; i++) {
+  console.log('=> '+array1[i].join(''));
+}
+
+//Array จัดข้อมูล
+
+let array2 = ['a','b','c','d','e','f','g','h'];
+
+let a = array2.map((item, index) => {
+  return {
+    key: index + 1,
+    value: item
+  };
+});
+
+console.log("Array = [");
+a.forEach(obj => {
+  console.log(`  { "key": ${obj.key}, "value": "${obj.value}" },`);
+});
+console.log("];");
+</script>
+
+
+
+<!-- HTML------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services</title>
+
+  <style>
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      box-shadow: 0 0 1px;
+    }
+
+    .card .image {
+      background: #f5e1c3;
+      padding: 50px;
+    }
+
+    .card .content {
+      padding: 20px;
+    }
+
+    .card .button {
+      background: #00e0ff;
+      padding: 10px;
+      text-decoration: none;
+      color: black;
+      display: block;
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 990px) {
+      .services {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .services {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+  
+</head>
+<body>
+
+  <div class="container">
+    <h1>Services</h1>
+
+    <div class="services">
+      <div class="card">
+        <div class="image">
+            <img src="#">
+        </div>
+        <div class="content">
+          <h2>Title</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Invertere volutpat magna egestas felis.</p>
+        </div>
+        <a href="#" class="button">More Detail</a>
+      </div>
+
+      <div class="card">
+        <div class="image">
+            <img src="#">
+        </div>
+        <div class="content">
+          <h2>Title</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Invertere volutpat magna egestas felis.</p>
+        </div>
+        <a href="#" class="button">More Detail</a>
+      </div>
+
+      <div class="card">
+        <div class="image">
+            <img src="#">
+        </div>
+        <div class="content">
+          <h2>Title</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Invertere volutpat magna egestas felis.</p>
+        </div>
+        <a href="#" class="button">More Detail</a>
+      </div>
+
+      <div class="card">
+        <div class="image">
+            <img src="#">
+        </div>
+        <div class="content">
+          <h2>Title</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Invertere volutpat magna egestas felis.</p>
+        </div>
+        <a href="#" class="button">More Detail</a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
+
+<script>
